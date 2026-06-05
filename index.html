@@ -1,61 +1,71 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>海湾钓手</title>
-  <meta name="description" content="一个可直接部署到 Cloudflare Pages 的跨平台网页钓鱼小游戏。">
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <main class="app-shell">
-    <section class="hud">
-      <div class="brand">
-        <span class="brand-kicker">LAN WEB GAME</span>
-        <h1>海湾钓手</h1>
-      </div>
-      <div class="stats">
-        <div class="stat">
-          <span class="label">分数</span>
-          <strong id="score">0</strong>
-        </div>
-        <div class="stat">
-          <span class="label">连击</span>
-          <strong id="combo">x1</strong>
-        </div>
-        <div class="stat">
-          <span class="label">剩余时间</span>
-          <strong id="time">60</strong>
-        </div>
-      </div>
-    </section>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钓了条鱼</title>
+    
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-START -->
+    <script src="https://aegis.cdn-go.cn/aegis-sdk-v2/2.6.13/aegis.min.js"></script>
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-END -->
 
-    <section class="stage-card">
-      <canvas id="game" width="960" height="540" aria-label="钓鱼游戏画面"></canvas>
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换主题">夜</button>
-    </section>
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-START -->
+    <script>
+      const tusiAppID = '1780544067803ffaec6cb72d6b6f4';
+      const tusiAppVersion = '12';
+      const tusiMode = 'apk';
+      
+      window.aegisV2 = new Aegis({
+        id: 'SDK-42a0ae29a90bc4f6a218',
+        hostUrl: {
+          url: 'https://galileotelemetry.tencent.com/collect',
+        },
+        plugin: {
+          spa: true,
+          assetSpeed: true,
+          session: true,
+          blankScreen: true,
+          api: {
+            apiDetail: true,
+            reportAbort: true,
+          },
+        },
+        extField: {
+          tusi_app_id: tusiAppID,
+          tusi_app_version: tusiAppVersion,
+          tusi_mode: tusiMode,
+        }
+      });
+    </script>
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-END -->
 
-    <section class="controls">
-      <div class="card">
-        <h2>玩法</h2>
-        <p>点击或触摸屏幕，把鱼钩抛入水里。钩到鱼会自动收线，不同鱼种分数不同，连续命中会提升连击倍率。</p>
-      </div>
-      <div class="card actions">
-        <button id="startButton" class="primary" type="button">开始游戏</button>
-        <button id="restartButton" class="secondary" type="button">重新开始</button>
-      </div>
-    </section>
-  </main>
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-START -->
+    <script src="https://cdn.yyb.gtimg.com/app-generator-h5-runtime-lib/latest/app-generator-h5-runtime-lib.iife.js"></script>
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-END -->
+    
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-START -->
+    <script>
+      if (
+        window.AppGeneratorH5RuntimeLib
+        && typeof window.AppGeneratorH5RuntimeLib.init === 'function'
+      ) {
+        window.AppGeneratorH5RuntimeLib.init();
+      }
+    </script>
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-END -->
 
-  <div id="overlay" class="overlay visible">
-    <div class="panel">
-      <p class="eyebrow">Cloudflare Pages Ready</p>
-      <h2>海湾钓手</h2>
-      <p id="overlayText">这是一个纯静态网页游戏，上传到 GitHub 后可直接接入 Cloudflare Pages 发布。</p>
-      <button id="overlayButton" class="primary" type="button">进入游戏</button>
-    </div>
-  </div>
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-START -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.yyb.gtimg.com/app-generator-h5-runtime-lib/latest/app-generator-h5-runtime-lib.css" />
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-END -->
 
-  <script src="./game.js"></script>
-</body>
+    
+  </head>
+  <body>
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-START -->
+    <div id="app"></div>
+    <!-- AI-DO-NOT-MODIFY-THIS-CODE-END -->
+    <script crossorigin id="vite-legacy-polyfill" src="/assets/polyfills-legacy-B_USmKyE.js"></script>
+    <script crossorigin id="vite-legacy-entry" data-src="/assets/index-legacy-DOb5s3af.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+  </body>
 </html>
